@@ -31,11 +31,11 @@ def get_correct_option_index(answer_key):
     return option_mapping.get(answer_key.lower(), None)
 
 async def send_quiz_to_channel(question, options, correct_option_index, explanation, channel_username):
-    question_text = f"{question}\n[@CurrentAdda]"
+    question_text = f"{question}\n[@English_grammar_adda]"
     
     # Use "@Currentadda" if explanation is not available or is NaN
     if explanation is None or (isinstance(explanation, float) and math.isnan(explanation)):
-        explanation = "@Currentadda"
+        explanation = "@english_grammar_adda"
     
     try:
         await bot.send_poll(
