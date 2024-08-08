@@ -8,9 +8,10 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
     
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -24,7 +25,8 @@ jobs:
     
     - name: Run the script
       env:
+        MONGO_URI: ${{ secrets.MONGO_URI }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHANNEL_USERNAME: ${{ secrets.TELEGRAM_CHANNEL_USERNAME }}
+        CHANNEL_USERNAME: ${{ secrets.CHANNEL_USERNAME }}
       run: |
         python main.py
