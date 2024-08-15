@@ -70,7 +70,7 @@ async def main():
         print(f"{i + 1}. {coll_name}")
     
     # Use the specific collection "questions"
-    selected_collection = 'questions'
+    selected_collection = 'English Grammar'
     print(f"Selected collection: {selected_collection}")
     
     num_questions = 10  # Number of questions to fetch
