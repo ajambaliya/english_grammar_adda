@@ -11,6 +11,7 @@ on:
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    timeout-minutes: 10  # Add timeout to avoid hanging jobs
 
     steps:
     - name: Checkout code
@@ -33,3 +34,15 @@ jobs:
         CHANNEL_USERNAME: ${{ secrets.CHANNEL_USERNAME }}
       run: |
         python main.py
+      continue-on-error: false  # Fail the workflow if the script fails
+    
+    - name: Log completion
+      if: success()
+      run: |
+        echo "Quiz bot ran successfully at $(date)"
+        
+    - name: Log failure
+      if: failure()
+      run: |
+        echo "Quiz bot failed at $(date)"
+        echo "Check the logs for more information"
