@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   schedule:
     # Run twice daily at 9:00 AM and 5:00 PM UTC
-    - cron: '0 9,17 * * *'
+    - cron: '30 3,14 * * *'
 
 jobs:
   run-script:
