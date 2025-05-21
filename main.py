@@ -128,7 +128,7 @@ async def send_pdf_to_channel(channel_username, pdf_buffer):
             chat_id=channel_username,
             document=pdf_buffer,
             filename="English_Grammar_Quiz_Compilation.pdf",
-            caption="📚 **QUIZ ANSWERS & EXPLANATIONS** 📚\n\nHere's a beautiful PDF with all questions, correct answers, and explanations from today's quiz!\n\n✅ Save it for your English grammar practice\n✅ Study at your convenience\n✅ Share with friends who are learning English\n\n👉 Join @english_grammar_adda for daily quizzes and updates!",
+            caption="📚 **QUIZ ANSWERS & EXPLANATIONS** 📚\n\nHere's a beautiful PDF with all questions, correct answers, and explanations from today's quiz!\n\n✅ Save it for your English grammar practice\n✅ Study at your convenience\n✅ Share with friends who are learning English\n\n👉 Join  for daily quizzes and updates!",
             parse_mode="Markdown"
         )
         print("PDF sent successfully to channel")
